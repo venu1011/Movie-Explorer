@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬Movie Details</title>
+    <link rel="stylesheet" href="movies-details.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 Movie Details</h1>
+    </header>
+
+    <main>
+        <div id="movieDetails"></div>
+        <div id="ratings" class="ratings-card"></div>
+        <button onclick="goBack()" class="back-btn">⬅ Back to Search</button>
+        <div class="user-rating">
+            <h3>⭐ Rate This Movie</h3>
+            <div class="stars">
+              <span data-value="1">★</span>
+              <span data-value="2">★</span>
+              <span data-value="3">★</span>
+              <span data-value="4">★</span>
+              <span data-value="5">★</span>
+            </div>
+            <p id="averageRating">Average Rating: 0.0</p>
+        </div>
+    </main>
+    
+    
+
+    <script src="movie-details.js"></script>
+</body>
+</html>

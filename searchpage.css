@@ -1,0 +1,283 @@
+/* Title Styling */
+.movies-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff4500;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(255, 69, 0, 0.5);
+    display: block;
+}
+
+
+/* Movie Title */
+.movie-card h3 {
+    font-size: 1rem;
+    margin: 8px 0;
+    padding: 0 5px;
+}
+/* 🔥 Horizontal Scroll for Trending Movies */
+.trending-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;  /* Enables horizontal scrolling */
+    white-space: nowrap;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for a cleaner look */
+.trending-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* 🎬 Movie Card Styling */
+.movie-card {
+    min-width: 200px;
+    max-width: 220px;
+    background: #1a1a1a;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+/* Movie Year */
+.movie-card p {
+    color: gold;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* View Details Button */
+.movie-card .view-details {
+    background: linear-gradient(45deg, #ff4500, #ff6200);
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+    width: 90%;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.movie-card .view-details:hover {
+    background: linear-gradient(45deg, #e63900, #ff8c00);
+    transform: scale(1.05);
+}
+
+/* Hover Animation */
+.movie-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0px 6px 12px rgba(255, 69, 0, 0.7);
+}
+
+/* 🔹 Responsive for Mobile */
+@media (max-width: 600px) {
+    .movies-title {
+        font-size: 1.5rem;
+    }
+
+    .trending-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movie-card {
+        width: 90%;
+        max-width: 200px;
+    }
+
+    .movie-card img {
+        height: 200px;
+    }
+
+    .movie-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .movie-card .view-details {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
+
+
+/* search bar style */
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #ff4d4d;
+}
+
+/* Search Section */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin-bottom: 50px;
+}
+
+.search-container input {
+    padding: 10px;
+    width: 80%;
+    max-width: 500px;
+    border: 2px solid #ff4d4d;
+    border-radius: 5px;
+    font-size: 1.1em;
+    background-color: #333;
+    color: white;
+    transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: #ff0000;
+    outline: none;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #e63939;
+}
+.search{
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 2.5em;
+    color: #ff4d4d;
+}
+/* Search Results Section */
+#moviesContainer {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping, keeps horizontal layout */
+    gap: 15px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 20px;
+    white-space: nowrap;
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+#moviesContainer::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome/Safari */
+}
+
+/* Movie Card */
+.movie-card {
+    background: #222;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    width: 200px; /* Fixed width for consistency */
+    flex: 0 0 auto; /* Ensures horizontal alignment */
+    padding-bottom: 10px;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 15px rgba(255, 77, 77, 0.5);
+}
+
+/* Movie Poster */
+.movie-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+/* Movie Title */
+.movie-title {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Movie Year */
+.movie-year {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+/* View Details Button */
+.movie-details-btn {
+    background: #ff9800;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.movie-details-btn:hover {
+    background: #e68900;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #moviesContainer {
+        flex-wrap: nowrap; /* Keeps movies in a row */
+        overflow-x: auto;
+    }
+
+    .movie-card {
+        width: 160px;
+    }
+
+    .movie-card img {
+        height: 230px;
+    }
+
+    .movie-title {
+        font-size: 14px;
+    }
+
+    .movie-year {
+        font-size: 12px;
+    }
+
+    .movie-details-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+

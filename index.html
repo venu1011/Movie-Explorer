@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬Movie Explorer</title>
+    <link rel="stylesheet" href="searchpage.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 Movie Explorer</h1>
+    </header>
+
+    <main>
+        
+        
+
+        <h2 class="search">🔍 Search for Movies</h2>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for a movie...">
+            <button id="searchButton">Search</button>
+            
+        </div>
+        <div id="moviesContainer" class="movies-grid"></div>
+        
+
+        <section id="trendingMovies">
+            <h2 class="movies-title"></h2>
+            <div class="trending-container">
+            <div class="movie-card">
+            <img src="movie-poster.jpg" alt="Movie Poster">
+            <h3>Movie Title</h3>
+            <p>Year: 2024</p>
+            <button class="view-details">🎬 View Details</button>
+
+            <div id="trendingMovies" class="movies-grid"></div>
+        </section>
+        
+    </main>
+    
+
+    <script src="searchpage.js"></script>
+</body>
+</html>
