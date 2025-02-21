@@ -116,4 +116,25 @@ document.querySelectorAll('.stars span').forEach(star => {
   
   // Initialize on page load
   displayAverageRating('yourMovieID');
+
+
+const apiKey = "AIzaSyBUH2spLIMcV9yBPL612PGecN0k8DX7TeA"; // Replace with your API Key
+const movieTitle = "Inception"; // Change dynamically based on the selected movie
+const searchQuery = `${movieTitle} Official Trailer`;
+const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&key=${apiKey}`;
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    if (data.items.length > 0) {
+      const videoId = data.items[0].id.videoId;
+      const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+      console.log("Trailer URL:", videoUrl); // You can use this to display the trailer
+    } else {
+      console.log("No trailer found.");
+    }
+  })
+  .catch(error => {
+    console.error("Error fetching trailer:", error);
+  });
   
