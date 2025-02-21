@@ -118,10 +118,10 @@ document.querySelectorAll('.stars span').forEach(star => {
   displayAverageRating('yourMovieID');
 
 
-const apiKey = "AIzaSyBUH2spLIMcV9yBPL612PGecN0k8DX7TeA"; // Replace with your API Key
+const api_Key = "AIzaSyBUH2spLIMcV9yBPL612PGecN0k8DX7TeA"; // Replace with your API Key
 const movieTitle = "Inception"; // Change dynamically based on the selected movie
 const searchQuery = `${movieTitle} Official Trailer`;
-const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&key=${apiKey}`;
+const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&key=${api_Key}`;
 
 fetch(url)
   .then(response => response.json())
