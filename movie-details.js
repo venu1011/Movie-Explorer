@@ -117,24 +117,27 @@ document.querySelectorAll('.stars span').forEach(star => {
   // Initialize on page load
   displayAverageRating('yourMovieID');
 
+ const api_Key = "AIzaSyBUH2spLIMcV9yBPL612PGecN0k8DX7TeA"; // Replace with your YouTube Data API v3 Key
 
-const api_Key = "AIzaSyBUH2spLIMcV9yBPL612PGecN0k8DX7TeA"; // Replace with your API Key
-const movieTitle = "Inception"; // Change dynamically based on the selected movie
-const searchQuery = `${movieTitle} Official Trailer`;
-const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&key=${api_Key}`;
 
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    if (data.items.length > 0) {
+// Function to fetch trailer using movie title
+async function fetchTrailer(movieTitle) {
+  const searchQuery = `${movieTitle} Official Trailer`;
+  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&key=${api_Key}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data.items && data.items.length > 0) {
       const videoId = data.items[0].id.videoId;
       const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-      console.log("Trailer URL:", videoUrl); // You can use this to display the trailer
+      window.open(videoUrl, "_blank"); // Open trailer in a new tab
     } else {
-      console.log("No trailer found.");
+      alert("No trailer found for this movie.");
     }
-  })
-  .catch(error => {
+  } catch (error) {
     console.error("Error fetching trailer:", error);
-  });
-  
+    alert("Failed to fetch the trailer. Please try again later.");
+  }
+}
